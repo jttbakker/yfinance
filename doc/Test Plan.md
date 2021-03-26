@@ -21,7 +21,7 @@ For each problem identified by these new tests, our team will engage in and docu
 - Unable to get quarterly_financials #533
     - Assert that there is no errors thrown when attempting to retrieve quarterly_financials
 - Financial Data not fetched #489
-      - Given a specific dataset assert that financial data returns the expected financial data frame
+    - Given a specific dataset assert that financial data returns the expected financial data frame
 - Empty data frame is returned for earnings, cashflow, balance sheet and financials #475
     - Given data assert that cashflow, balance_sheet, financials etc. don't return empty
 - Problem with requesting asset.info for certain assets whilst other data fields like history are defined #448
