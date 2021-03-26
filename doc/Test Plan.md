@@ -62,3 +62,4 @@ For each problem identified by these new tests, our team will engage in and docu
 ## 6. Test Approach
 
 ## 7. Test Environment
+Tests will be performed on one of our team members local machines running one of Windows, Mac OS, or Linux.
