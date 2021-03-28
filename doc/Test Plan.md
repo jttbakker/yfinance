@@ -56,10 +56,25 @@ For each problem identified by these new tests, our team will engage in and docu
     - Assert that yahoo finance is not operating on the premium version
 
 ## 4. Planned Tests
+Due to time constraints, we will only be implementing 3 unit tests to demonstrate how this testing approach can be applied to the base.py "earnings" section.<br>
+The following three tests will be implemented:
+| Test | Purpose | Issues Tested |
+|------|--------|---------|
+|1| Verify that self._earnings has the "yearly" key set to the appropriate dataframe generated from the data object.| |
+|2| Verify that self._earnings has the "quarterly" key set to the appropriate dataframe generated from the data object.| |
+|3| Verify that self._earnings has the "yearly" and "quarterly" keys set to their appropriate dataframes generated from the data object.| |
 
 ## 5. Risks
+| Risk | Impact | Trigger | Mitigation Plan |
+|------|--------|---------|-----------------|
+|Uncaught side effects from leftover code in _get_fundamentals() method | High | If or try blocks that haven't been disabled | Deliberately leave certain object fields and data entries blank to prevent all non-earnings blocks from executing meaningful code. |
 
 ## 6. Test Approach
+We intend to test the base.py "earnings" functionality by first isolating it from the rest of the _get_fundamentals() method.<br><br>
+This method largely consists of several if blocks which execute if the data object contains a dictionary associated to a certain key (e.g. if isinstance(data.get('esgScores'), dict)). These blocks will be prevented from executing by ensuring that the data object does not contain any data at keys other than "earnings". Since the data object is provided
+by the get_json() method of utils, a stub data object will be provided by a mock of get_json().<br><br>
+All events will be skipped by simply not instantiating their required object fields. Since the events will execute a single pass call in the event of an exception, each event's first required class attribute will be set to None to force an exception.
+
 
 ## 7. Test Environment
 Tests will be performed on one of our team members local machines running one of Windows, Mac OS, or Linux.
