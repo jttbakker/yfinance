@@ -1,0 +1,6 @@
+5.a) no
+5.b) also no because:
+1. some problems are based on missing data which is not a quick fix.
+2. proxy problems require setup of different proxies.
+3. error from retreiving data from database may require updating the database setup.
+
